@@ -20,7 +20,7 @@ public class StudentTest {
         sqlSession = StudentUtil.getSqlSession();
         StudentMapper studentMapper = sqlSession.getMapper(StudentMapper.class);
         Student student = new Student();
-        student.setName("张三");
+        student.setGradeId(1);
         List<Student> list = studentMapper.selectStudent(student);
         // list.forEach(System.out::println);
         for (Student student1 : list){

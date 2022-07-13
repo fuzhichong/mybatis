@@ -4,21 +4,21 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="mapper.StudentMapper">
     <select id="selectStudent" parameterType="entity.Student" resultType="entity.Student">
-        select * from student where true
-        <choose>
-            <when test="id!=null">
+        select * from student
+        <where>
+            <if test="id!=null">
                 and id = #{id}
-            </when>
-            <when test="name!=null">
+            </if>
+            <if test="name!=null">
                 and name = #{name}
-            </when>
-            <when test="sex!=null">
+            </if>
+            <if test="sex!=null">
                 and sex = #{sex}
-            </when>
-            <when test="gradeid!=null">
-                and gradeid = #{gradeid}
-            </when>
-        </choose>
+            </if>
+            <if test="gradeId!=null">
+                and gradeId = #{gradeId}
+            </if>
+        </where>
 
     </select>
 </mapper>
